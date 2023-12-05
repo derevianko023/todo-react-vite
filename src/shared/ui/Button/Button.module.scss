@@ -1,0 +1,8 @@
+@import '@/app/styles/mixin.scss';
+
+.button {
+  @include button-styles;
+  &:disabled {
+    cursor: not-allowed;
+  }
+}

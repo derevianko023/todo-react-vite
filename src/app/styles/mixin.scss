@@ -1,0 +1,17 @@
+@import '@/app/styles/variables.scss';
+
+@mixin button-styles {
+    padding: 16px 17px;
+    font-size: $primary-font-size;
+    border-radius: 7px;
+    border: none;
+    margin-left: 15px;
+    background-color: $primary-color;
+    color: $black-color;
+    cursor: pointer;
+  }
+  @mixin flex-styles {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }

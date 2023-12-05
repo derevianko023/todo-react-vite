@@ -1,0 +1,8 @@
+@import '@/app/styles/mixin.scss';
+
+.wrapper {
+    width: 720px;
+    height: 35px;
+    margin-bottom: 50px;
+    @include flex-styles;
+}

@@ -1,0 +1,1 @@
+export { CompletedTasks } from "./ui/CompletedTasks/CompletedTasks";

@@ -1,0 +1,8 @@
+@import '@/app/styles/mixin.scss';
+
+.Todo {
+  width: 100%;
+  padding: 20px;
+  flex-direction: column;
+  @include flex-styles;
+}

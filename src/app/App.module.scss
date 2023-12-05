@@ -1,0 +1,36 @@
+@import '@/app/styles/variables.scss';
+@import '@/app/styles/mixin.scss';
+
+body {
+  background-color: $black-color;
+}
+.container {
+  @include flex-styles;
+  justify-content: center;
+}
+.header {
+  font-family: $primary-font;
+  font-size: 36px;
+  color: $primary-color;
+  text-align: center;
+  width: 100%;
+  padding: 20px;
+  margin: 0 auto;
+}
+.navigation {
+  width: 600px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 25px  auto;
+}
+.item {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: $secondary-font-size;
+  color: $primary-color;
+}
+.activeItem {
+  color: #54bee8 !important;
+  font-weight: bold !important;
+}

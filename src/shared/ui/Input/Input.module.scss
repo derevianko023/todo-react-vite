@@ -1,0 +1,33 @@
+@import '@/app/styles/variables.scss';
+.input {
+  width: 560px;
+  height: 50px;
+  padding: 10px;
+  border: 3px solid $primary-color;
+  border-radius: 15px;
+  font-size: 16px;
+  color: $secondary-color;
+  background-color: $black-color;
+  margin: 0 0px 0 20px;
+  &::placeholder {
+    color: $secondary-color;
+    font-family: $primary-font;
+    font-style: italic;
+    font-size: $primary-font-size;
+  }
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 5px lighten($primary-color, 20%);
+  }
+}
+
+input[type="checkbox"] {
+  width: 30px;
+  height: 30px;
+  margin-right: 20px;
+}
+
+input[type="checkbox"]:focus {
+  outline: none;
+  box-shadow: none;
+}
