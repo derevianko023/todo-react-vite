@@ -1,22 +1,31 @@
 // hooks
 import { useTodoContext } from "@/shared/libs/hooks/useTodoContext";
 // ui
-import { TodoTask } from "@/widgets/Todo/ui/TodoTask/TodoTask";
+import { TodoTask } from "../../../HomePage/ui/Todo/ui/TodoTask/TodoTask";
+//styles
+import styles from "./CompletedTasks.module.scss";
 
 export const CompletedTasks = () => {
-  const { todos } = useTodoContext();
-  const arrOfCompletedTasks = todos.filter((todo) => todo.completed === true);
+  const { arrOfCompletedTasks } = useTodoContext();
   return (
-    <div>
-      My completed tasks
-      {arrOfCompletedTasks.map((todo) => (
-        <TodoTask
-          key={todo.id}
-          id={todo.id}
-          text={todo.text}
-          completed={todo.completed}
-        />
-      ))}
+    <div className={styles.contentWrapper}>
+      {arrOfCompletedTasks.length >= 1 ? (
+        <>
+          <h2 className={styles.header}>My completed tasks</h2>
+          <ul className={styles.list}>
+            {arrOfCompletedTasks.map((todo) => (
+              <TodoTask
+                key={todo.id}
+                id={todo.id}
+                text={todo.text}
+                completed={todo.completed}
+              />
+            ))}
+          </ul>
+        </>
+      ) : (
+        <h2 className={styles.header}>There are no completed tasks yet</h2>
+      )}
     </div>
   );
 };

@@ -27,10 +27,15 @@ body {
 .item {
   text-decoration: none;
   text-transform: uppercase;
+  font-weight: 700;
   font-size: $secondary-font-size;
   color: $primary-color;
+  font-family: $primary-font;
 }
 .activeItem {
-  color: #54bee8 !important;
-  font-weight: bold !important;
+  color: $secondary-color;
+  font-weight: 700;
+  background-color: $primary-color;
+  border-radius: 7px;
+  padding: 10px 20px;
 }

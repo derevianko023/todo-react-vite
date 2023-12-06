@@ -1,7 +1,7 @@
 // styles
 import styles from "./HomePage.module.scss";
 //widgets
-import { Todo } from "@/widgets/Todo";
+import { Todo } from "@/pages/HomePage/ui/Todo";
 
 export const HomePage = () => {
   return (

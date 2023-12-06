@@ -6,8 +6,6 @@ import { TodoContext } from "./TodoContext";
 export const TodoProvider = ({ children }) => {
   const [todos, setTodos] = useState([]);
 
-  const arrOfCompletedTasks = todos.filter((todo) => todo.completed === true);
-
   const addTodo = (todo) => {
     const todosWithAddedTodo = [...todos, todo];
 
@@ -27,10 +25,19 @@ export const TodoProvider = ({ children }) => {
 
     setTodos(todosWithUpdatedTodo);
   };
+  const arrOfCompletedTasks = todos.filter((todo) => todo.completed);
+  const arrOfIncompletedTasks = todos.filter((todo) => !todo.completed);
 
   return (
     <TodoContext.Provider
-      value={{ todos, addTodo, deleteTodo, updateTodo }}
+      value={{
+        todos,
+        addTodo,
+        deleteTodo,
+        updateTodo,
+        arrOfCompletedTasks,
+        arrOfIncompletedTasks,
+      }}
     >
       {children}
     </TodoContext.Provider>

@@ -1,0 +1,25 @@
+@import "@/app/styles/variables.scss";
+
+.header {
+  color: #ffffff;
+  font-size: 25px;
+  font-family: $primary-font;
+  margin: 25px auto;
+}
+.contentWrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.list {
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 25px;
+}
