@@ -7,6 +7,9 @@ import styles from "./CompletedTasks.module.scss";
 
 export const CompletedTasks = () => {
   const { arrOfCompletedTasks } = useTodoContext();
+
+  console.log(arrOfCompletedTasks);
+
   return (
     <div className={styles.contentWrapper}>
       {arrOfCompletedTasks.length >= 1 ? (

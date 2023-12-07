@@ -8,10 +8,17 @@ import styles from "./TodoList.module.scss";
 export const TodoList = () => {
   const { todos } = useTodoContext();
 
+  console.log(todos);
+
   return (
     <ul className={styles.TodoList}>
       {todos.map((todo) => (
-        <TodoTask key={todo.id} id={todo.id} text={todo.text} completed={todo.completed} />
+        <TodoTask
+          key={todo.id}
+          id={todo.id}
+          text={todo.text}
+          completed={todo.completed}
+        />
       ))}
     </ul>
   );

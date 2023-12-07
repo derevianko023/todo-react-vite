@@ -3,15 +3,17 @@ import { useState } from "react";
 // hooks
 import { useTodoContext } from "@/shared/libs/hooks/useTodoContext";
 // ui
-import { Button } from "@/shared/ui/Button";
+import { Button } from "@/shared/ui/Button/Button";
 import { Input } from "@/shared/ui/Input";
+import { Checkbox } from "@/shared/ui/Checkbox";
 // styles
 import styles from "./TodoTask.module.scss";
 
 export const TodoTask = ({ id, text, completed }) => {
-
   const [todoText, setTodoText] = useState(text);
+
   const [isEditing, setIsEditing] = useState(false);
+
   const { deleteTodo, updateTodo } = useTodoContext();
 
   const onTodoTextChange = (event) => {
@@ -26,6 +28,7 @@ export const TodoTask = ({ id, text, completed }) => {
     const todo = {
       text: todoText,
       id: id,
+      completed: completed,
     };
     updateTodo(todo);
     setIsEditing(false);
@@ -45,18 +48,11 @@ export const TodoTask = ({ id, text, completed }) => {
 
   return (
     <li
-      className={`${styles.TodoTask} ${
-        completed ? styles.completedTask : ""
-      }`}
+      className={`${styles.TodoTask} ${completed ? styles.completedTask : ""}`}
     >
       {!isEditing ? (
         <>
-          <Input
-            type="checkbox"
-            checked={completed}
-            onChange={onToggleCompletedClick}
-            className={styles.input}
-          />
+          <Checkbox checked={completed} onChange={onToggleCompletedClick} />
           <div className={styles.txtWrapper}>{text}</div>
           <div>
             <Button onClick={onEditTodoClick}>Edit</Button>

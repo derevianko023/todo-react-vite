@@ -8,6 +8,8 @@ import styles from "./IncompletedTasks.module.scss";
 export const IncompletedTasks = () => {
   const { arrOfIncompletedTasks } = useTodoContext();
 
+  console.log(arrOfIncompletedTasks);
+
   return (
     <div className={styles.contentWrapper}>
       {arrOfIncompletedTasks.length >= 1 ? (
